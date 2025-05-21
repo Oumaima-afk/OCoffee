@@ -1,6 +1,6 @@
 -- créer les tables
 
-DROP TABLE IF EXISTS "coffee_characteristic", "country", "characteristic", "coffee";
+DROP TABLE IF EXISTS "coffee_characteristic", "coffee", "characteristic", "country";
 
 CREATE TABLE "country" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
