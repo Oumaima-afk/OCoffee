@@ -14,7 +14,9 @@
 
 ![image](../mcd-ocoffee.png)
 
-Chaque café appartient à un seul pays, et chaque café peut avoir plusieurs caractéristiques.
+Chaque café appartient à un seul pays.
+
+Chaque café peut avoir plusieurs caractéristiques, et chaque caractéristiques peut s'appliquer à plusieurs cafés.
 
 ### MLD (Modèle Logique de Données)
 
@@ -23,18 +25,6 @@ Chaque café appartient à un seul pays, et chaque café peut avoir plusieurs ca
 ### MPD (Modèle Physique de Données)
 
 ```SQL
-CREATE TABLE "coffee" (
-    "coffee_id" INT PRIMARY KEY,
-    "name" TEXT ,
-    "description" TEXT,
-    "price" INT,
-    "country_id" INT,
-    "in_stock" BOOLEAN,
-    "characteristic_id" INT,
-    FOREIGN KEY ("country_id") REFERENCES "country"("country_id")
-    FOREIGN KEY ("characteristic_id") REFERENCES "characteristic"("characteristic_id")
-);
-
 CREATE TABLE "country" (
     "country_id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "name" TEXT
@@ -43,5 +33,19 @@ CREATE TABLE "country" (
 CREATE TABLE "characteristic" (
     "characteristic_id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "name" TEXT
+);
+CREATE TABLE "coffee" (
+    "coffee_id" INT PRIMARY KEY,
+    "name" TEXT ,
+    "description" TEXT,
+    "price" NUMERIC,
+    "country_id" INT REFERENCES "country"("id"),
+    "in_stock" TEXT,
+);
+
+CREATE TABLE "coffee_characteristic"( 
+  "coffee_id" INT NOT NULL REFERENCES "coffee"("id"), 
+  "characteristic_id" INT NOT NULL REFERENCES "characteristic"("id"), 
+  PRIMARY KEY ("coffee_id", "characteristic_id") 
 );
 ```
