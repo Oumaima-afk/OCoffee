@@ -4,6 +4,8 @@ import { catalogController } from '../controllers/catalog.controller.js';
 
 export const mainRouter = Router();
 
-mainRouter.get('/', mainController.homePage);
+// mainRouter.get('/', mainController.homePage);
+
+mainRouter.get('/', mainController.index);
 
 mainRouter.get('/catalog', catalogController.catalog);

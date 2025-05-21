@@ -14,36 +14,21 @@
       <h2>Nouveautés</h2>
       
       <ul>
-        <li>
-          <article>
-            <img src="/images/coffees/100955890.png" alt="Ethiopian Yirgacheffe">
-            <div>
-              <h3>Ethiopian Yirgacheffe</h3>
-              <a class="button-outline" href="#">Voir le détail</a>
-            </div>
-          </article>
-        </li>
-
-        <li>
-          <article>
-            <img src="/images/coffees/100955890.png" alt="Ethiopian Yirgacheffe">
-            <div>
-              <h3>Ethiopian Yirgacheffe</h3>
-              <a class="button-outline" href="#">Voir le détail</a>
-            </div>
-          </article>
-        </li>
-
-        <li>
-          <article>
-            <img src="/images/coffees/100955890.png" alt="Ethiopian Yirgacheffe">
-            <div>
-              <h3>Ethiopian Yirgacheffe</h3>
-              <a class="button-outline" href="#">Voir le détail</a>
-            </div>
-          </article>
-        </li>
-
+        <% if (locals.threeCoffees && Array.isArray(locals.threeCoffees) && locals.threeCoffees.length > 0) { %>
+          <% for (const coffee of threeCoffees) { %>
+            <li>
+              <article>
+                <img src="/images/coffees/<%= coffee.id %>.png" alt="<%= coffee.name %>">
+                <div>
+                  <h3><%= coffee.name %></h3>
+                  <a class="button-outline" href="#">Voir le détail</a>
+                </div>
+              </article>
+            </li>
+            <% } %>
+          <% } else { %>
+            <li>Pas de café disponible</li>
+        <% } %>
       </ul>
     </section>
 

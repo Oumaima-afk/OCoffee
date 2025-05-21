@@ -24,6 +24,7 @@
   "homepage": "https://github.com/O-clock-Athenes/SB04-Ocoffee-Oumaima-afk#readme",
   "dependencies": {
     "ejs": "^3.1.10",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "pg": "^8.16.0"
   }
 }
