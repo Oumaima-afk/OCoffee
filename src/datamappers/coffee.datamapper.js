@@ -6,4 +6,9 @@ export const coffeeDataMapper = {
         const result = await client.query('SELECT * FROM coffee LIMIT 3');
         return result.rows;
     },
+
+    async getAll() {
+        const result = await client.query('SELECT * FROM coffee');
+        return result.rows;
+    },
 }
