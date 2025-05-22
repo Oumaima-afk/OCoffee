@@ -16,7 +16,7 @@
                   <h2><%= coffee.name %></h2>
                   <p>Origine <%= coffee.country.name %></p>
                   <p><%= coffee.price %> €/kg</p>
-                  <a class="button-outline" href="#">Voir le détail</a>
+                  <a class="button-outline" href="/coffee/<%= coffee.id %>">Voir le détail</a>
                 </div>
               </article>
             <% } %>

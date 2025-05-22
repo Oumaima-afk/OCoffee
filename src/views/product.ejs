@@ -1,0 +1,56 @@
+<%- include('partials/header') %>
+
+<main>
+  <section id="product">
+    <h1>Détail du produit</h1>
+
+    <% if (coffeeCard) { %>
+      <article class="product-card">
+        <div class="product-image">
+          <img
+            src="/images/coffees/<%= coffeeCard.id %>.png"
+            alt="<%= coffeeCard.name %>"
+          />
+        </div>
+        
+        <div class="product-details">
+          <h2><%= coffeeCard.name %></h2>
+          <p class="product-description"><%= coffeeCard.description %></p>
+          <p class="product-reference">Référence : <%= coffeeCard.id %></p>
+
+          <% if (coffeeCard.country && coffeeCard.country.name) { %>
+            <p class="product-origin">Origine : <%= coffeeCard.country.name %></p>
+          <% } %>
+
+          <p class="product-price">Prix : <strong><%= coffeeCard.price %> €/kg</strong></p>
+
+          <% if (characteristics && Array.isArray(characteristics) && characteristics.length > 0) { %>
+            <p class="product-feature">Caractéristiques principales :
+              <% for (let i = 0; i < characteristics.length; i++) { %>
+                <% if (characteristics[i].name.length > 1) { %>
+                  <%= characteristics[i].name %><%= (i < characteristics.length - 1) ? ', ' : '' %>
+                <% } %>
+              <% } %>
+            </p>
+          <% } %>
+
+          <p class="product-stock">
+            Disponibilité :
+            <% if (coffeeCard.in_stock) { %>
+              <span class="stock-yes">En stock</span>
+            <% } else { %>
+              <span class="stock-no">Rupture de stock</span>
+            <% } %>
+          </p>
+
+        </div>
+      </article>
+    <% } else { %>
+      <h2>Pas de café disponible</h2>
+    <% } %>
+  </section>
+</main>
+
+<%- include('partials/footer') %>
+
+
