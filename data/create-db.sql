@@ -4,21 +4,21 @@ DROP TABLE IF EXISTS "coffee_characteristic", "coffee", "characteristic", "count
 
 CREATE TABLE "country" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "name" TEXT
+    "name" TEXT UNIQUE NOT NULL
 );
 
 CREATE TABLE "characteristic" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "name" TEXT
+    "name" TEXT UNIQUE NOT NULL
 );
 
 CREATE TABLE "coffee" (
     "id" INT PRIMARY KEY,
-    "name" TEXT ,
+    "name" TEXT NOT NULL,
     "description" TEXT,
     "price" NUMERIC,
-    "country_id" INT REFERENCES "country"("id"),
-    "in_stock" TEXT
+    "country_id" INT NOT NULL REFERENCES "country"("id"),
+    "in_stock" BOOLEAN NOT NULL DEFAULT false
 );
 
 CREATE TABLE "coffee_characteristic"( 
@@ -55,22 +55,22 @@ INSERT INTO "characteristic"("name") VALUES
 ('Chocolaté');
 
 INSERT INTO "coffee"("id", "name", "description", "price", "in_stock", "country_id") VALUES
-(100955890, 'Espresso', 'Café fort et concentré préparé en faisant passer de l''eau chaude à travers du café finement moulu.', 20.99, 'oui', 1),
-(100955894, 'Columbian', 'Café moyennement corsé avec une acidité vive et une saveur riche.', 18.75, 'oui', 2),
-(105589090, 'Ethiopian Yirgacheffe', 'Réputé pour son arôme floral, son acidité vive et ses notes de saveur citronnée.', 22.50, 'oui', 3),
-(134009550, 'Brazilian Santos', 'Café doux et lisse avec un profil de saveur de noisette.', 17.80, 'oui', 4),
-(256505890, 'Guatemalan Antigua', 'Café corsé avec des nuances chocolatées et une pointe d''épice.', 21.25, 'oui', 5),
-(295432730, 'Kenyan AA', 'Café complexe connu pour son acidité rappelant le vin et ses saveurs fruitées.', 23.70, 'oui', 6),
-(302932754, 'Sumatra Mandheling', 'Café profond et terreux avec un corps lourd et une faible acidité.', 19.95, 'oui', 7),
-(327302954, 'Costa Rican Tarrazu', 'Café vif et net avec une finition propre et une acidité vive.', 24.50, 'oui', 8),
-(549549090, 'Vietnamese Robusta', 'Café audacieux et fort avec une saveur robuste distinctive.', 16.75, 'oui', 9),
-(582954954, 'Tanzanian Peaberry', 'Acidité vive avec un profil de saveur rappelant le vin et un corps moyen.', 26.80, 'oui', 10),
-(589100954, 'Jamaican Blue Mountain', 'Reconnu pour sa saveur douce, son acidité vive et son absence d''amertume.', 39.25, 'oui', 11),
-(650753915, 'Rwandan Bourbon', 'Café avec des notes florales prononcées, une acidité vive et un corps moyen.', 21.90, 'oui', 12),
-(795501340, 'Panamanian Geisha', 'Café rare aux arômes floraux complexes, une acidité brillante et un profil de saveur distinctif.', 42.00, 'oui', 13),
-(954589100, 'Peruvian Arabica', 'Café équilibré avec des notes de chocolat, une acidité modérée et un corps velouté.', 19.40, 'non', 14),
-(958090105, 'Hawaiian Kona', 'Café rare au goût riche, une acidité douce et des nuances subtiles.', 55.75, 'non', 15),
-(691550753, 'Nicaraguan Maragogipe', 'Café avec des notes de fruits, une acidité vive et un corps plein.', 28.60, 'non', 16);
+(100955890, 'Espresso', 'Café fort et concentré préparé en faisant passer de l''eau chaude à travers du café finement moulu.', 20.99, TRUE, 1),
+(100955894, 'Columbian', 'Café moyennement corsé avec une acidité vive et une saveur riche.', 18.75, TRUE, 2),
+(105589090, 'Ethiopian Yirgacheffe', 'Réputé pour son arôme floral, son acidité vive et ses notes de saveur citronnée.', 22.50, TRUE, 3),
+(134009550, 'Brazilian Santos', 'Café doux et lisse avec un profil de saveur de noisette.', 17.80, TRUE, 4),
+(256505890, 'Guatemalan Antigua', 'Café corsé avec des nuances chocolatées et une pointe d''épice.', 21.25, TRUE, 5),
+(295432730, 'Kenyan AA', 'Café complexe connu pour son acidité rappelant le vin et ses saveurs fruitées.', 23.70, TRUE, 6),
+(302932754, 'Sumatra Mandheling', 'Café profond et terreux avec un corps lourd et une faible acidité.', 19.95, TRUE, 7),
+(327302954, 'Costa Rican Tarrazu', 'Café vif et net avec une finition propre et une acidité vive.', 24.50, TRUE, 8),
+(549549090, 'Vietnamese Robusta', 'Café audacieux et fort avec une saveur robuste distinctive.', 16.75, TRUE, 9),
+(582954954, 'Tanzanian Peaberry', 'Acidité vive avec un profil de saveur rappelant le vin et un corps moyen.', 26.80, TRUE, 10),
+(589100954, 'Jamaican Blue Mountain', 'Reconnu pour sa saveur douce, son acidité vive et son absence d''amertume.', 39.25, TRUE, 11),
+(650753915, 'Rwandan Bourbon', 'Café avec des notes florales prononcées, une acidité vive et un corps moyen.', 21.90, TRUE, 12),
+(795501340, 'Panamanian Geisha', 'Café rare aux arômes floraux complexes, une acidité brillante et un profil de saveur distinctif.', 42.00, TRUE, 13),
+(954589100, 'Peruvian Arabica', 'Café équilibré avec des notes de chocolat, une acidité modérée et un corps velouté.', 19.40, FALSE, 14),
+(958090105, 'Hawaiian Kona', 'Café rare au goût riche, une acidité douce et des nuances subtiles.', 55.75, FALSE, 15),
+(691550753, 'Nicaraguan Maragogipe', 'Café avec des notes de fruits, une acidité vive et un corps plein.', 28.60, FALSE, 16);
 
 INSERT INTO "coffee_characteristic"("coffee_id", "characteristic_id") VALUES
 (100955890, 1), (100955890, 2),

@@ -27,20 +27,21 @@ Chaque café peut avoir plusieurs caractéristiques, et chaque caractéristiques
 ```SQL
 CREATE TABLE "country" (
     "country_id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "name" TEXT
+    "name" TEXT UNIQUE NOT NULL
 );
 
 CREATE TABLE "characteristic" (
     "characteristic_id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "name" TEXT
+    "name" TEXT UNIQUE NOT NULL
 );
+
 CREATE TABLE "coffee" (
     "coffee_id" INT PRIMARY KEY,
-    "name" TEXT ,
+    "name" TEXT NUL NULL,
     "description" TEXT,
     "price" NUMERIC,
-    "country_id" INT REFERENCES "country"("id"),
-    "in_stock" TEXT,
+    "country_id" INT NOT NULL REFERENCES "country"("id"),
+    "in_stock" BOOLEAN NOT NULL DEFAULT false
 );
 
 CREATE TABLE "coffee_characteristic"( 
