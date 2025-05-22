@@ -71,6 +71,12 @@
   font-weight: bold;
 }
 
+#map {
+  margin-top: 2rem;
+  height: 200px;
+}
+
+
 @media (max-width: 768px) {
   .product-card {
     flex-direction: column;

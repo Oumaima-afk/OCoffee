@@ -24,7 +24,12 @@ export const coffeeController = {
 
         const characteristics = await coffeeDataMapper.getByCoffeeId(coffeeId);
 
-        res.render('product', {coffeeCard, characteristics})
+        const coordinates = {
+            latitude: country.latitude,
+            longitude: country.longitude
+        };
+
+        res.render('product', {coffeeCard, characteristics, coordinates})
     },
 
 }

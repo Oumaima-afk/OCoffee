@@ -43,6 +43,8 @@
             <% } %>
           </p>
 
+          <div id="map"></div>
+
         </div>
       </article>
     <% } else { %>
@@ -50,6 +52,12 @@
     <% } %>
   </section>
 </main>
+
+<script src="/js/map.js"></script>
+<script>
+  const coordinates = <%- JSON.stringify(coordinates) %>;
+  initializeMap(coordinates);
+</script>
 
 <%- include('partials/footer') %>
 
