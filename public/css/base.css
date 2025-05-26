@@ -1,13 +1,10 @@
 /* ==== Variables ==== */
 
 :root {
-  --color-dark: #3E1E04;
+  --color-dark: #494045;
   --color-brown: #8b5c38;
-  --color-orange: #965015;
-  --color-yellow: #C4923E;
-  --color-cream: #f7dbb9;
+  --color-light: #edecec;
 }
-
 
 /* Custom reset */
 
@@ -19,4 +16,21 @@ a {
 ul {
   list-style-type: none;
   padding: 0;
+}
+
+/* Fonts */
+
+@font-face {
+  font-family: "Athene_voyage";
+  src: url(../font/Athene\ Voyage.ttf);
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url(../font/Lora-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Plus_Jakarta";
+  src: url(../font/PlusJakarta.ttf);
 }

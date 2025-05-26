@@ -1,45 +1,31 @@
-/* === Primary button === */
-.button {
-  display: block;
-  padding: 1rem 1.5rem;
-  cursor: pointer;
+/* === Titles === */
+h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: "Lora";
+  font-weight: lighter;
+  margin-top: 2rem;
+}
 
+h2 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-family: "Lora";
+  font-weight: lighter;
+}
+
+/* === Footer === */
+
+footer {
+  height: 20vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-color: #121212;
+  color: #ffff;
+}
+
+footer p {
+  margin: auto 0;
   text-align: center;
-  font-weight: bold;
-
-  color: var(--color-cream);
-  background-color: var(--color-dark);
-
-  border: 1px solid var(--color-dark);
-  border-radius: 5rem;
-}
-
-.button:hover {
-  color: var(--color-cream);
-  border-color: var(--color-cream);
-
-  transition: all 0.3s ease-in-out;
-}
-
-
-/* === Secondary button === */
-
-.button-outline {
-  display: block;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  
-  text-align: center;
-
-  color: var(--color-cream);
-  border: 1px solid var(--color-cream);
-  border-radius: 5rem;
-}
-
-.button-outline:hover {
-  color: var(--color-orange);
-  border-color: var(--color-orange);
-  background-color: var(--color-cream);
-
-  transition: all 0.3s ease-in-out;
 }

@@ -1,34 +1,35 @@
-<%- include('partials/header') %>
+<div id="catalog-hero">
+  <%- include('partials/header') %>
+  <h1>Catalogue</h1>
+</div>
 
-    <main>
-      <section id="catalog">
-        <h1>Notre catalogue</h1>
-
-        <div class="articles only-display-3-articles" id="articles-list">
-          <% if (locals.allCoffees && Array.isArray(locals.allCoffees) && locals.allCoffees.length > 0) { %>
-            <% for (const coffee of allCoffees) { %>
-              <article>
-                <img
-                  src="/images/coffees/<%= coffee.id %>.png"
-                  alt="<%= coffee.name %>"
-                />
-                <div>
-                  <h2><%= coffee.name %></h2>
-                  <p>Origine <%= coffee.country.name %></p>
-                  <p><%= coffee.price %> €/kg</p>
-                  <a class="button-outline" href="/coffee/<%= coffee.id %>">Voir le détail</a>
-                </div>
-              </article>
-            <% } %>
-          <% } else { %>
-            <h2>Pas de café disponible</h2>
-          <% } %>
+<main>
+  <section id="catalog">
+    <div id="articles-list">
+      <% if (locals.allCoffees && Array.isArray(locals.allCoffees) &&
+      locals.allCoffees.length > 0) { %> <% for (const coffee of allCoffees) {
+      %>
+      <article>
+        <img
+          src="/images/coffees/<%= coffee.id %>.png"
+          alt="<%= coffee.name %>"
+        />
+        <div>
+          <h2><%= coffee.name %></h2>
+          <p>Origine <%= coffee.country.name %></p>
+          <div class="details">
+            <p class="price"><%= coffee.price %> €/kg</p>
+            <a class="button-outline" href="/coffee/<%= coffee.id %>"
+              >Voir le détail</a
+            >
+          </div>
         </div>
-
-        <button class="button" id="see-all-products-button" data-state="collapsed">
-          Voir tous les produits
-        </button>
-      </section>
-    </main>
+      </article>
+      <% } %> <% } else { %>
+      <h2>Pas de café disponible</h2>
+      <% } %>
+    </div>
+  </section>
+</main>
 
 <%- include('partials/footer') %>

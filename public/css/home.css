@@ -1,76 +1,183 @@
 /* ======== About Section ======== */
 
-#about {
-    display: flex;
-    justify-content: space-between;
-    gap: 5rem;
+#hero {
+  position: relative;
+  background: url("../images/about.jpeg") no-repeat top center/cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 2rem;
 }
 
-#about img {
-    border-radius: 0.7rem;
-    object-fit: cover;
-    width: 50%;
-    max-width: 650px;
+#hero #about {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 6rem;
+  left: 80vh;
+  width: 60%;
+  gap: 5rem;
+  z-index: 2;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-@media screen and (max-width: 1280px) {
-    #about img {
-        display: none;
-    }
-}
-
-#about h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
+#hero #about div {
+  margin-left: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #about p {
-    line-height: 1.5rem;
-    margin: 3rem 0;
-    font-size: 1.3rem;
-    line-height: 2rem;
-    text-align: justify;
+  line-height: 1.5rem;
+  margin: 3rem 0;
+  font-size: 1rem;
+  line-height: 2rem;
+  text-align: center;
 }
 
 #about a {
-    width: fit-content;
+  width: fit-content;
+}
+
+.button {
+  display: block;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  text-align: center;
+  color: var(--color-light);
+  border: 1px solid var(--color-light);
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 2px 8px 0px;
+  transition: all 0.3s ease-in-out;
 }
 
 /* ======== Latest Products Section ======== */
 
-#latest-products ul {
-    display: flex;
-    gap: 3rem;
-    flex-wrap: wrap;
-    justify-content: space-between;
+#latest-products {
+  text-align: center;
+  margin: 5rem 0;
+}
 
-    margin: 2.5rem 0;
+#latest-products h2 {
+  margin-bottom: 2rem;
+}
+
+#latest-products ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1000px;
 }
 
 #latest-products li {
-    flex-grow: 1;
-    flex-basis: 16rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 #latest-products article {
-    background-color: var(--color-orange);
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+  background-color: #f3e7db;
+  border: 1px solid #c5a782;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
-#latest-products article img {
-    width: 100%;
-    height: 15rem;
-    object-fit: cover;
-
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
+#latest-products img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
 }
 
-#latest-products article div {
-    padding: 1.5rem;
+#latest-products h3 {
+  font-size: 1rem;
+  margin: 1rem 0;
+  color: #444;
 }
 
-#latest-products article a {
-    margin-top: 1rem;
+#latest-products .button-outline {
+  padding: 0.4rem 0.8rem;
+  color: #fff;
+  background-color: #592113;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#latest-products .button-outline:hover {
+  background-color: #fff;
+  border: 1px solid #592113;
+  color: #592113;
+}
+
+#latest-products div {
+  margin-bottom: 0.5rem;
+}
+
+/* ======== Section between ======== */
+
+#between-section {
+  background: url("../images/coffees/AdobeStock_1151275955.png") no-repeat
+    center center/cover;
+  height: 60vh;
+}
+
+/* ======== About us Section ======== */
+
+#about-us .button {
+  display: inline-flex;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  margin-top: 2.5rem;
+  cursor: pointer;
+  width: fit-content;
+  color: #592113;
+  border: 1px solid #592113;
+  transition: all 0.3s ease-in-out;
+}
+
+#about-us .button:hover {
+  box-shadow: rgba(39, 39, 39, 0.4) 0px 2px 8px 0px;
+  transition: all 0.3s ease-in-out;
+}
+
+#about-us {
+  text-align: center;
+  padding: 5rem 6rem;
+}
+
+#about-us h2 {
+  margin-bottom: 2rem;
+}
+
+#about-us p {
+  margin: 0 4rem;
+}
+
+#about-us #aboutus-img {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+#about-us img {
+  width: 20%;
 }

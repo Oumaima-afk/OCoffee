@@ -5,20 +5,10 @@ html {
 }
 
 body {
-  width: 80%;
+  width: 100%;
   min-height: 100vh;
-  
-  padding: 4rem 0;
-  margin: 0 auto;
-
-  background: linear-gradient(var(--color-brown) 0%, var(--color-dark) 100%);
-  color: var(--color-cream);
 
   font-family: Helvetica, Arial, sans-serif;
-}
-
-section {
-  margin: 8rem 0;
 }
 
 @media screen and (max-width: 720px) {
@@ -45,13 +35,8 @@ header > a {
   font-weight: bold;
 }
 
-header img  {
-  height: 3rem;
-  width: auto;
-}
-
 header nav {
-  color: var(--color-cream);
+  color: var(--color-light);
 }
 
 header ul {
@@ -61,10 +46,6 @@ header ul {
 
 header li a {
   font-size: 1.3rem;
-}
-
-header li a:hover {
-  color: var(--color-dark);
 }
 
 /* ======== Header burger menu (on small screen) ======== */
@@ -82,12 +63,12 @@ header button {
 @media screen and (min-width: 1280px) {
   /* Hide "menu button" on large screen by default */
   header button {
-      display: none;
+    display: none;
   }
 
   /* Hide "Home link" on large screen by default */
   header ul > :first-child {
-      display: none;
+    display: none;
   }
 }
 
@@ -122,7 +103,7 @@ header nav.expanded {
 /* Bonus : extra animation */
 @keyframes menu-slide-in {
   from {
-    width:  0vw;
+    width: 0vw;
     padding: 4rem 0rem;
     color: var(--color-dark);
   }
@@ -137,6 +118,12 @@ header nav.expanded ul {
 
 header nav.expanded a {
   color: inherit;
+}
+
+header #logo {
+  font-family: "Athene_voyage";
+  font-weight: lighter;
+  color: white;
 }
 
 /* ===========  Footer =========== */
