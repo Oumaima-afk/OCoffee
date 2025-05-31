@@ -1,3 +1,3 @@
-import { Client } from 'pg';
-export const client = new Client(process.env.PGURL);
+import { Client } from "pg";
+export const client = new Client(process.env.DATABASE_URL);
 client.connect();
