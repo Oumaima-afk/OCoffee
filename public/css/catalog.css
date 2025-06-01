@@ -52,7 +52,6 @@ header {
 
 #catalog article img {
   width: 100%;
-  height: 30vh;
   object-fit: cover;
   border-radius: 6px;
 }
