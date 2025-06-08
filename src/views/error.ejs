@@ -1,15 +1,16 @@
-<%- include('partials/header') %>
+<div id="error-hero">
+  <%- include('partials/header') %>
+  <h1>Oups !</h1>
+  <p>La page que vous recherchez semble introuvable.</p>
+</div>
 
 <main>
-  <section id="about">
-    <div>
-      <h1>Erreur</h1>
-      <p>La page que vous demandez n'existe pas.</p>
-    </div>
-    <img
-      src="images/about.jpg"
-      alt="Selection de nos meilleurs cafés oCoffee"
-    />
+  <section id="error">
+    <p>
+      Il semble que vous soyez perdu. Pas de panique, vous pouvez retourner à
+      <a href="/">l'accueil</a> ou explorer notre
+      <a href="/catalog">catalogue</a>.
+    </p>
   </section>
 </main>
 
