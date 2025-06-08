@@ -10,6 +10,13 @@ app.set("views", "./src/views");
 
 app.use(express.static("public"));
 
+// logger middleware
+app.use((req, res, next) => {
+  req.time = new Date(Date.now()).toString();
+  console.log(req.method, req.hostname, req.path, req.time);
+  next();
+});
+
 app.use(mainRouter);
 
 app.listen(PORT, () => {
