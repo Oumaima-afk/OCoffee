@@ -25,8 +25,8 @@ Le site est conçu pour être accessible, écologique et responsive, afin d'offr
 
 ## Structure du projet
 
-- /public => Fichiers statiques (CSS, JS, images)
-- /views => Templates EJS
-- /routes => Routes Express
-- /controllers => Logique métier
-- /datamappers => Connexion avec la base de donnée
+- `/public` : Fichiers statiques (CSS, JS, images)
+- `/views` : Templates EJS
+- `/routes` : Routes Express
+- `/controllers` : Logique métier
+- `/datamappers` : Connexion avec la base de données
